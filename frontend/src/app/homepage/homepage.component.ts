@@ -30,6 +30,7 @@ export class HomepageComponent {
   onSubmit(){
     this.formSubmitted = true;
     if(this.createForm.valid){
+      console.log("Submitted");
       console.log(this.createForm.value);
 
       // this.proxy$.createExpense(this.createExpenseForm.value).subscribe((result : any) => {

@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="card" width="100%">
                     <div class="card-body">
-                        <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                        <form [formGroup]="createForm">
                             <div class="mb-3">
                                 <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
                                 <input type="date" class="form-control" id="date" formControlName = "date">
@@ -43,11 +43,14 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select" formControlName = "budgetType" aria-label="Default select example">
                                     <option selected>Budget Type</option>
                                     <option value="1">Expense</option>
                                     <option value="2">Income</option>
                                 </select>
+                                <div *ngIf="formSubmitted && createForm.controls.budgetType.hasError('required')" class="text-danger">
+                                    Budget Type is required
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
@@ -85,7 +88,7 @@
                                     Category is required
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
                         </form>
                     </div>
                 </div>
