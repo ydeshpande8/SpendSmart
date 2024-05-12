@@ -45,8 +45,8 @@
                             <div class="mb-3">
                                 <select class="form-select" formControlName = "type" aria-label="Default select example">
                                     <option selected>Budget Type</option>
-                                    <option value="1">Expense</option>
-                                    <option value="2">Income</option>
+                                    <option value="Expense">Expense</option>
+                                    <option value="Income">Income</option>
                                 </select>
                                 <div *ngIf="formSubmitted && createForm.controls.type.hasError('required')" class="text-danger">
                                     Budget Type is required

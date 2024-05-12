@@ -11,6 +11,7 @@ export class TransactionsComponent {
   constructor(private proxy$:BudgetproxyService){
     proxy$.getAllBudgets().subscribe((result:any) =>{
       console.log(result);
+      this.categories = result;
     })
   }
 
