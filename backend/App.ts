@@ -140,7 +140,7 @@ class App {
         try
         {
           await this.Budget.model.create([jsonObj]);
-          res.send(jsonObj.name + ' Budget created successfully' )
+          res.send('Budget for type ' + jsonObj.type + ' created successfully' )
         }
         catch(e)
         {
