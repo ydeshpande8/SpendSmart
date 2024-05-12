@@ -10,12 +10,14 @@ import { TransactionsComponent } from './transactions/transactions.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BudgetproxyService } from './budgetproxy.service';
+import { SingleTransactionComponent } from './single-transaction/single-transaction.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransactionsComponent,
-    HomepageComponent
+    HomepageComponent,
+    SingleTransactionComponent
   ],
   imports: [
     BrowserModule,

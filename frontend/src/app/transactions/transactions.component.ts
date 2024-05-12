@@ -14,8 +14,5 @@ export class TransactionsComponent {
       this.categories = result;
     })
   }
-
-
-  singleCategory: any = {date:'5/09/2024', type: 'Income', amount: 6000, note:'Salary' };
-
+  
 }

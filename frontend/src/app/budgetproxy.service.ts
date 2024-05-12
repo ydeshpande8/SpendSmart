@@ -18,4 +18,8 @@ export class BudgetproxyService {
   getAllBudgets(){
     return this.httpClient.get(this.hostUrl + '/app/budget/')
   }
+
+  getSingleBudget(budgetId:number){
+    return this.httpClient.get(this.hostUrl + `/app/budget/${budgetId}`)
+  }
 }
