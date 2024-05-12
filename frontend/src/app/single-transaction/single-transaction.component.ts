@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BudgetproxyService } from '../budgetproxy.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -8,10 +9,11 @@ import { BudgetproxyService } from '../budgetproxy.service';
   styleUrl: './single-transaction.component.css'
 })
 export class SingleTransactionComponent {
-  budgetId : any;
   singleCategory: any;
-  constructor(private proxy$:BudgetproxyService){
-    this.proxy$.getSingleBudget(this.budgetId).subscribe((result:any) =>{
+  constructor(private route:ActivatedRoute ,private proxy$:BudgetproxyService){
+
+    this.proxy$.getSingleBudget(this.route.snapshot.params['id']).subscribe((result:any) =>{
+      console.log(result);
       this.singleCategory = result;
     })
   }
