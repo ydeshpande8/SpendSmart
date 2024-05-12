@@ -14,4 +14,8 @@ export class BudgetproxyService {
   createExpense(expense : Object){
     return this.httpClient.post(this.hostUrl + '/app/budget/', expense)
   }
+
+  getAllBudgets(){
+    return this.httpClient.get(this.hostUrl + '/app/budget/')
+  }
 }

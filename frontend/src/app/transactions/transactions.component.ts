@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BudgetproxyService } from '../budgetproxy.service';
 
 @Component({
   selector: 'app-transactions',
@@ -6,12 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './transactions.component.css'
 })
 export class TransactionsComponent {
-  categories: any = [
-    {date:'5/09/2024', type: 'Income', amount: 6000, note:'Salary' },
-    {date:'5/10/2024', type: 'Income', amount: 2000, note:'Savings' },
-    {date:'5/10/2024', type: 'Expense', amount: 100, note:'Restaurant' },
-    {date:'5/11/2024', type: 'Expense', amount: 3000, note:'Rent'},
-  ];
+  categories: any;
+  constructor(private proxy$:BudgetproxyService){
+    proxy$.getAllBudgets().subscribe((result:any) =>{
+      console.log(result);
+    })
+  }
+
 
   singleCategory: any = {date:'5/09/2024', type: 'Income', amount: 6000, note:'Salary' };
 
