@@ -11,13 +11,15 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BudgetproxyService } from './budgetproxy.service';
 import { SingleTransactionComponent } from './single-transaction/single-transaction.component';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TransactionsComponent,
     HomepageComponent,
-    SingleTransactionComponent
+    SingleTransactionComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
