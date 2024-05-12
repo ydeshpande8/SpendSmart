@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 
 @Injectable({
@@ -21,5 +21,11 @@ export class BudgetproxyService {
 
   getSingleBudget(budgetId:number){
     return this.httpClient.get(this.hostUrl + `/app/budget/${budgetId}`)
+  }
+
+  getReports(report:any){
+    
+    let params = new HttpParams().set('month',report.month).set('year',report.year);
+    return this.httpClient.get(this.hostUrl + `/app/report/`, {params:params})
   }
 }
