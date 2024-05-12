@@ -24,7 +24,7 @@ export class HomepageComponent {
       Validators.required
     ]),
     note : new FormControl(''),
-    budgetType : new FormControl('',[
+    type : new FormControl('',[
       Validators.required
     ])
   });

@@ -16,13 +16,18 @@ const CategoryModel_1 = require("./models/CategoryModel");
 const BudgetModel_1 = require("./models/BudgetModel");
 const crypto = require("crypto");
 const UserModel_1 = require("./models/UserModel");
+const cors = require("cors");
 // Creates and configures an ExpressJS web server.
 class App {
     //Run configuration methods on the Express instance.
     constructor(mongoDBConnection) {
+        this.corsOptions = {
+            origin: 'http://localhost:4200'
+        };
         this.expressApp = express();
         this.middleware();
         this.routes();
+        this.expressApp.use(cors(this.corsOptions));
         this.Category = new CategoryModel_1.CategoryModel(mongoDBConnection);
         this.Budget = new BudgetModel_1.BudgetModel(mongoDBConnection);
         this.User = new UserModel_1.UserModel(mongoDBConnection);
