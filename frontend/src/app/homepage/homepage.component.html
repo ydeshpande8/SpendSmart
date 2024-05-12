@@ -22,8 +22,8 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="expenseNote" class="form-label">Note</label>
-                                <input type="text" class="form-control" id="expenseNote" formControlName = "expenseNote">
+                                <label for="note" class="form-label">Note</label>
+                                <input type="text" class="form-control" id="note" formControlName = "note">
                             </div>
                             <div class="mb-3">
                                 <label for="amount" class="form-label">Expense Amount <span class="text-danger">*</span></label>
@@ -33,12 +33,12 @@
                                             $
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" id="amount" formControlName = "expenseAmount">
+                                    <input type="text" class="form-control" id="amount" formControlName = "amount">
                                 </div>
-                                <div *ngIf="formSubmitted && createForm.controls.expenseAmount.hasError('required')" class="text-danger">
+                                <div *ngIf="formSubmitted && createForm.controls.amount.hasError('required')" class="text-danger">
                                     Amount is required
                                 </div>
-                                <div *ngIf="formSubmitted && createForm.controls.expenseAmount.hasError('pattern')" class="text-danger">
+                                <div *ngIf="formSubmitted && createForm.controls.amount.hasError('pattern')" class="text-danger">
                                     Amount must be a number
                                 </div>
                             </div>
@@ -56,35 +56,27 @@
                                 <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
                                 <div class="d-flex flex-wrap align-items-center gap-2 btn-group" role="group"> 
                                     <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Food" name="category" value="Food" formControlName="category" autocomplete="off">
+                                        <input type="radio" class="btn-check category-option" id="Food" name="categoryId" value="663f2e152158b3404246b7a3" formControlName="categoryId" autocomplete="off">
                                         <label class="btn btn-outline-primary" for="Food"><i class="fas fa-utensils mx-4"></i>Food</label>
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Housing" name="category" value="Housing" formControlName="category" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Housing"><i class="fas fa-home mx-4"></i>Housing</label>
+                                        <input type="radio" class="btn-check category-option" id="Education" name="categoryId" value="663f2e152158b3404246b7a4" formControlName="categoryId" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="Education"><i class="fas fa-graduation-cap mx-4"></i>Education</label>
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Education" name="category" value="Education" formControlName="category" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Education"><i class="fas fa-graduation-cap mx-4"></i>Education</label>
+                                        <input type="radio" class="btn-check category-option" id="Medical" name="categoryId" value="663f2e152158b3404246b7a5" formControlName="categoryId" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="Medical"><i class="fas fa-plus mx-4"></i>Medical</label>
                                     </div>     
                                     <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Checks" name="category" value="Checks" formControlName="category" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Checks"><i class="fas fa-file-invoice-dollar mx-4"></i>Checks</label>
+                                        <input type="radio" class="btn-check category-option" id="Salary" name="categoryId" value="663f2e152158b3404246b7a6" formControlName="categoryId" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="Salary"><i class="fas fa-money-bill mx-4"></i>Salary</label>
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Transportation" name="category" value="Transportation" formControlName="category" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Transportation"><i class="fas fa-bus-alt mx-4"></i>Transportation</label>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Salary" name="category" value="Salary" formControlName="category" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Salary"><i class="fas fa-bus-alt mx-4"></i>Salary</label>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Savings" name="category" value="Savings" formControlName="category" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Savings"><i class="fas fa-bus-alt mx-4"></i>Savings</label>
+                                        <input type="radio" class="btn-check category-option" id="Bonus" name="categoryId" value="663f2e152158b3404246b7a7" formControlName="categoryId" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="Bonus"><i class="fas fa-hand-holding-usd mx-4"></i>Bonus</label>
                                     </div>
                                 </div>
-                                <div *ngIf="formSubmitted && createForm.controls.category.hasError('required')" class="text-danger">
+                                <div *ngIf="formSubmitted && createForm.controls.categoryId.hasError('required')" class="text-danger">
                                     Category is required
                                 </div>
                             </div>

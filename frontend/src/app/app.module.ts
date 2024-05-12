@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgIf, NgFor } from '@angular/common';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BudgetproxyService } from './budgetproxy.service';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,10 @@ import { HomepageComponent } from './homepage/homepage.component';
     RouterOutlet,
     ReactiveFormsModule,
     NgIf,
-    NgFor
+    NgFor,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [BudgetproxyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

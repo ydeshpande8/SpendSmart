@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
+import { BudgetproxyService } from '../budgetproxy.service';
 
 
 @Component({
@@ -9,18 +10,20 @@ import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angula
 })
 export class HomepageComponent {
   formSubmitted= false;
+  constructor(private proxy$:BudgetproxyService){}
   createForm = new FormGroup({
-    date : new FormControl('',[
+    categoryId : new FormControl('',[
       Validators.required
     ]),
-    expenseNote : new FormControl(''),
-    expenseAmount : new FormControl('',[
+    userId: new FormControl('663f2e142158b3404246b799'),
+    amount : new FormControl('',[
       Validators.required,
       Validators.pattern("^[0-9]*$")
     ]),
-    category : new FormControl('',[
+    date : new FormControl('',[
       Validators.required
     ]),
+    note : new FormControl(''),
     budgetType : new FormControl('',[
       Validators.required
     ])
@@ -30,12 +33,10 @@ export class HomepageComponent {
   onSubmit(){
     this.formSubmitted = true;
     if(this.createForm.valid){
-      console.log("Submitted");
-      console.log(this.createForm.value);
-
-      // this.proxy$.createExpense(this.createExpenseForm.value).subscribe((result : any) => {
-      //   console.log(result);
-      // })
+      // console.log(this.createForm.value);
+      this.proxy$.createExpense(this.createForm.value).subscribe((result : any) => {
+        console.log(result);
+      })
     }
   }
 
