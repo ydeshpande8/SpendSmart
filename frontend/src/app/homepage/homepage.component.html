@@ -12,8 +12,8 @@
         <div class="row justify-content-center my-5">
             <div class="col-md-12">
                 <div class="card" width="100%">
-                    <div class="card-body">
-                        <form [formGroup]="createForm">
+                    <div class="card-body" >
+                        <form [formGroup]="createForm" width="60vw">
                             <div class="mb-3">
                                 <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
                                 <input type="date" class="form-control" id="date" formControlName = "date">
@@ -26,7 +26,7 @@
                                 <input type="text" class="form-control" id="note" formControlName = "note">
                             </div>
                             <div class="mb-3">
-                                <label for="amount" class="form-label">Expense Amount <span class="text-danger">*</span></label>
+                                <label for="amount" class="form-label">Amount <span class="text-danger">*</span></label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
@@ -44,7 +44,7 @@
                             </div>
                             <div class="mb-3">
                                 <select class="form-select" formControlName = "type" aria-label="Default select example">
-                                    <option selected>Budget Type</option>
+                                    <option value = '' disabled hidden selected>Budget Type</option>
                                     <option value="Expense">Expense</option>
                                     <option value="Income">Income</option>
                                 </select>
@@ -54,28 +54,13 @@
                             </div>
                             <div class="mb-3">
                                 <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
-                                <div class="d-flex flex-wrap align-items-center gap-2 btn-group" role="group"> 
+                                <div class="d-flex flex-wrap align-items-center gap-2 btn-group" role="group" *ngFor="let category of categories"> 
                                     <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Food" name="categoryId" value="663f2e152158b3404246b7a3" formControlName="categoryId" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Food"><i class="fas fa-utensils mx-4"></i>Food</label>
+                                        <input type="radio" class="btn-check category-option" id={{category.name}} name="categoryId" value={{category._id}} formControlName="categoryId" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for={{category.name}}><i class="fas fa-utensils mx-4"></i>{{category.name}}</label>
                                     </div>
-                                    <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Education" name="categoryId" value="663f2e152158b3404246b7a4" formControlName="categoryId" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Education"><i class="fas fa-graduation-cap mx-4"></i>Education</label>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Medical" name="categoryId" value="663f2e152158b3404246b7a5" formControlName="categoryId" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Medical"><i class="fas fa-plus mx-4"></i>Medical</label>
-                                    </div>     
-                                    <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Salary" name="categoryId" value="663f2e152158b3404246b7a6" formControlName="categoryId" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Salary"><i class="fas fa-money-bill mx-4"></i>Salary</label>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id="Bonus" name="categoryId" value="663f2e152158b3404246b7a7" formControlName="categoryId" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for="Bonus"><i class="fas fa-hand-holding-usd mx-4"></i>Bonus</label>
-                                    </div>
-                                </div>
+                                </div> 
+                                <!-- old method -->
                                 <div *ngIf="formSubmitted && createForm.controls.categoryId.hasError('required')" class="text-danger">
                                     Category is required
                                 </div>

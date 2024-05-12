@@ -28,4 +28,8 @@ export class BudgetproxyService {
     let params = new HttpParams().set('month',report.month).set('year',report.year);
     return this.httpClient.get(this.hostUrl + `/app/report/`, {params:params})
   }
+
+  getAllCategories(){
+    return this.httpClient.get(this.hostUrl + '/app/category/')
+  }
 }
