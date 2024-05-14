@@ -39,10 +39,13 @@ export class HomepageComponent {
   onSubmit(){
     this.formSubmitted = true;
     if(this.createForm.valid){
-      // console.log(this.createForm.value);
       this.proxy$.createExpense(this.createForm.value).subscribe((result : any) => {
-       this.router.navigate(['/transactions']);
+        console.log(result)
+        if(result){
+          this.router.navigate(['/transactions']);
+        }
       })
+    
     }
   }
 

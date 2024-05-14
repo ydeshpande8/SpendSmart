@@ -1,75 +1,75 @@
-<div id="d-flex page-content-wrapper">
-    <div class="container-fluid px-4">
-        <!-- <div class="row g-3 my-2">
-            <div class="col-md-12 d-flex justify-content-center">
-                <div class="p-3 d-flex justify-content-around align-items-center rounded">
-                    <button id="expenseBtn" class="btn btn-primary btn-lg mx-7" (click)="onExpenseButtonClickEvent()">Expense</button>
-                    <button id="incomeBtn" class="btn btn-primary btn-lg mx-3" (click)="onIncomeButtonClickEvent()">Income</button>
-                </div>
-            </div>
-        </div> -->
-    
-        <div class="row justify-content-center my-5">
-            <div class="col-md-12">
-                <div class="card" width="100%">
-                    <div class="card-body" >
-                        <form [formGroup]="createForm" width="60vw">
-                            <div class="mb-3">
-                                <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
-                                <input type="date" class="form-control" id="date" formControlName = "date">
-                                <div *ngIf="formSubmitted && createForm.controls.date.hasError('required')" class="text-danger">
-                                    Date is required
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved UI</title>
+    <!-- Link to your preferred CSS framework or your custom styles -->
+</head>
+<body>
+    <div id="page-content-wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card mx-auto shadow-lg p-3 mb-5 bg-white rounded"> <!-- Added shadow, padding, and rounded corners -->
+                        <div class="card-body">
+                            <form [formGroup]="createForm" class="form">
+                                <div class="form-group">
+                                    <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="date" formControlName="date">
+                                    <div *ngIf="formSubmitted && createForm.controls.date.hasError('required')" class="error-text">
+                                        Date is required
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="note" class="form-label">Note</label>
-                                <input type="text" class="form-control" id="note" formControlName = "note">
-                            </div>
-                            <div class="mb-3">
-                                <label for="amount" class="form-label">Amount <span class="text-danger">*</span></label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            $
+                                <div class="form-group">
+                                    <label for="note" class="form-label">Note</label>
+                                    <input type="text" class="form-control" id="note" formControlName="note">
+                                </div>
+                                <div class="form-group">
+                                    <label for="amount" class="form-label">Amount <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">$</div>
+                                        </div>
+                                        <input type="text" class="form-control" id="amount" formControlName="amount">
+                                    </div>
+                                    <div *ngIf="formSubmitted && createForm.controls.amount.hasError('required')" class="error-text">
+                                        Amount is required
+                                    </div>
+                                    <div *ngIf="formSubmitted && createForm.controls.amount.hasError('pattern')" class="error-text">
+                                        Amount must be a number
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="type" class="form-label">Budget Type <span class="text-danger">*</span></label>
+                                    <select class="form-select" formControlName="type">
+                                        <option value="" disabled hidden selected>Budget Type</option>
+                                        <option value="Expense">Expense</option>
+                                        <option value="Income">Income</option>
+                                    </select>
+                                    <div *ngIf="formSubmitted && createForm.controls.type.hasError('required')" class="error-text">
+                                        Budget Type is required
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Category <span class="text-danger">*</span></label>
+                                    <div class="category-options">
+                                        <div class="form-check" *ngFor="let category of categories">
+                                            <input type="radio" class="form-check-input category-option" id="{{category.name}}" name="categoryId" value="{{category._id}}" formControlName="categoryId">
+                                            <label class="form-check-label" for="{{category.name}}">{{category.name}}</label>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" id="amount" formControlName = "amount">
-                                </div>
-                                <div *ngIf="formSubmitted && createForm.controls.amount.hasError('required')" class="text-danger">
-                                    Amount is required
-                                </div>
-                                <div *ngIf="formSubmitted && createForm.controls.amount.hasError('pattern')" class="text-danger">
-                                    Amount must be a number
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <select class="form-select" formControlName = "type" aria-label="Default select example">
-                                    <option value = '' disabled hidden selected>Budget Type</option>
-                                    <option value="Expense">Expense</option>
-                                    <option value="Income">Income</option>
-                                </select>
-                                <div *ngIf="formSubmitted && createForm.controls.type.hasError('required')" class="text-danger">
-                                    Budget Type is required
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
-                                <div class="d-flex flex-wrap align-items-center gap-2 btn-group" role="group" *ngFor="let category of categories"> 
-                                    <div class="col-md-4">
-                                        <input type="radio" class="btn-check category-option" id={{category.name}} name="categoryId" value={{category._id}} formControlName="categoryId" autocomplete="off">
-                                        <label class="btn btn-outline-primary" for={{category.name}}><i class="fas fa-utensils mx-4"></i>{{category.name}}</label>
+                                    <div *ngIf="formSubmitted && createForm.controls.categoryId.hasError('required')" class="error-text">
+                                        Category is required
                                     </div>
-                                </div> 
-                                <!-- old method -->
-                                <div *ngIf="formSubmitted && createForm.controls.categoryId.hasError('required')" class="text-danger">
-                                    Category is required
                                 </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
-                        </form>
+                                <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+</html>

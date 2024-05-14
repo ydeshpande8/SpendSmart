@@ -114,7 +114,7 @@ class App {
             var jsonObj = req.body;
             try {
                 yield this.Budget.model.create([jsonObj]);
-                res.send('Budget for type ' + jsonObj.type + ' created successfully');
+                res.json({ message: "Budget for type Expense created successfully" });
             }
             catch (e) {
                 console.error(e);
