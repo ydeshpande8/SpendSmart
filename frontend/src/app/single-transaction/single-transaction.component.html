@@ -1,17 +1,23 @@
-<div id="d-flex page-content-wrapper">
-    <div class="container-fluid my-5 px-4">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <h5 class="card-title">The {{singleCategory?.type}} entry on {{singleCategory?.date}}</h5>
-                    <div class="card-body">
-                        <p>Date: {{singleCategory?.date}}</p>
-                        <p>Amount: {{singleCategory?.amount}}</p>
-                        <p>Note: {{singleCategory?.note}}</p>
-                        <p>Type: {{singleCategory?.type}}</p>
-                    </div>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Transaction</title>
+    <link rel="stylesheet" href="single-transaction.component.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">Budget Details</h5>
+            <div class="card-body">
+                <p>Date: {{singleCategory?.date | date:'yyyy-MM-dd'}}</p>
+                <p>Amount: {{singleCategory?.amount}}</p>
+                <p>Note: {{singleCategory?.note}}</p>
+                <p>Type: {{singleCategory?.type}}</p>
+                <p>Category: {{singleCategory?.categoryId.name}}</p>
             </div>
         </div>
     </div>
-</div>  
+</body>
+</html>
