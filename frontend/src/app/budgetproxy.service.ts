@@ -11,7 +11,7 @@ export class BudgetproxyService {
 
   constructor(private httpClient: HttpClient) { }
 
-  createExpense(expense : Object){
+  createBudget(expense : Object){
     return this.httpClient.post(this.hostUrl + '/app/budget', expense)
   }
 
