@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BudgetproxyService } from './budgetproxy.service';
 import { SingleTransactionComponent } from './single-transaction/single-transaction.component';
 import { ReportComponent } from './report/report.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ReportComponent } from './report/report.component';
     NgIf,
     NgFor,
     HttpClientModule,
+    NgApexchartsModule
   ],
   providers: [BudgetproxyService],
   bootstrap: [AppComponent]

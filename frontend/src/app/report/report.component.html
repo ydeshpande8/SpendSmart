@@ -49,5 +49,18 @@
                 </div>
             </div>
         </div>
+        <div class="row justify-content-center my-5" *ngIf="reportShow">
+            <div class="col-md-12">
+                <div class="card" width="100%">
+                    <div class="card-body">
+                        <div class="chart">
+                            <apx-chart #chart [series]="chartOptions.series? chartOptions.series: []" [chart]="chartOptions.chart?? {type:'pie'} " [labels]="chartOptions.labels? chartOptions.labels : []" [responsive]="chartOptions.responsive ? chartOptions.responsive : [] ">
+
+                            </apx-chart>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
