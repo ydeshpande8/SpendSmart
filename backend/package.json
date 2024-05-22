@@ -2,7 +2,7 @@
   "name": "spendsmart",
   "version": "1.0.0",
   "description": "1. Create db folder in WebWizards Directory     mkdir db",
-  "main": "index.js",
+  "main": "AppServer.js",
   "scripts": {
     "test": "mocha"
   },
