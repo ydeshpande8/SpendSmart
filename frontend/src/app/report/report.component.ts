@@ -51,16 +51,16 @@ export class ReportComponent {
     ]),
   });
 
-  sampleOutput = [
-    {
-        "totalAmount": 185,
-        "type": "Expense"
-    },
-    {
-        "totalAmount": 603,
-        "type": "Income"
-    }
-  ];
+  // sampleOutput = [
+  //   {
+  //       "totalAmount": 185,
+  //       "type": "Expense"
+  //   },
+  //   {
+  //       "totalAmount": 603,
+  //       "type": "Income"
+  //   }
+  // ];
 
   onSubmit(){
     this.formSubmitted = true;
