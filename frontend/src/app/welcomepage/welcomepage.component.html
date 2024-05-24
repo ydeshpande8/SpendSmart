@@ -1,0 +1,35 @@
+<div id="d-flex page-content-wrapper">
+    <div class="container-fluid px-4">
+        <div class="row justify-content-center my-5">
+            <div class="col-md-12">
+                <div class="card" width="100%">
+                    <div *ngIf="isLoggedIn; then defaultContent else authContent"></div>
+                        <ng-template #defaultContent>
+                            <div class="card-body" >
+                                <h3 class="text-primary"> Hello User! Welcome to SmartSpend here you can track your expenses and income with a proper visualization and reports </h3>
+                                <div class="row justify-content-center my-3">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-primary mx-2" (click)="onBudgetButtonClick()">I want to add budget</button>
+                                        <button type="button" class="btn btn-primary mx-2" (click)="onTransactionButtonClick()">I want to view history of budget</button>
+                                        <button type="button" class="btn btn-primary mx-2" (click)="onReportButtonClick()">I want to view reports of my transactions</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                        <ng-template #authContent>
+                            <div class="card-body">
+                                <h3 class="text-primary"> Hello Budget Manager! </h3>
+                                <h3 class="text-primary"> Welcome to SmartSpend please login to continue </h3>
+                                <div class="row justify-content-center my-3">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-primary mx-2">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+</div>

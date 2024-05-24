@@ -13,6 +13,7 @@ import { BudgetproxyService } from './budgetproxy.service';
 import { SingleTransactionComponent } from './single-transaction/single-transaction.component';
 import { ReportComponent } from './report/report.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { WelcomepageComponent } from './welcomepage/welcomepage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     TransactionsComponent,
     HomepageComponent,
     SingleTransactionComponent,
-    ReportComponent
+    ReportComponent,
+    WelcomepageComponent
   ],
   imports: [
     BrowserModule,
