@@ -42,7 +42,7 @@ export class HomepageComponent {
       this.proxy$.createBudget(this.createForm.value).subscribe((result : any) => {
         console.log(result)
         if(result){
-          this.router.navigate(['/transactions']);
+          this.router.navigate(['transaction',result._id]);
         }
       })
     

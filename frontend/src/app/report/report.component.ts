@@ -73,7 +73,7 @@ export class ReportComponent {
         this.chartOptions = {
           series: this.reportInfo.map((item: { totalAmount: any; }) => item.totalAmount),
           chart: {
-            width: 380,
+            width: 301,
             type: "pie"
           },
           labels: this.reportInfo.map((item: { type: any; }) => item.type),
