@@ -8,9 +8,9 @@ import { ReportComponent } from './report/report.component';
 import { WelcomepageComponent } from './welcomepage/welcomepage.component';
 
 const routes: Routes = [
-  {path:'', component:TransactionsComponent},
+  {path:'', component:WelcomepageComponent},
   {path:'budget', component:HomepageComponent},
-  //{path:'transactions', component:TransactionsComponent},
+  {path:'transactions', component:TransactionsComponent},
   {path:'transaction/:id', component:SingleTransactionComponent},
   {path:'report', component:ReportComponent}
 ];
