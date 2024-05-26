@@ -3,44 +3,46 @@
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f0f2f5, #e9ecef);
+    height: 100vh;
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
-    width: 100vw;
-}
-
-#d-flex.page-content {
-    display: flex;
-    width: 100%;
-    padding: 0;
-    margin: 0;
     justify-content: center;
+    align-items: center;
+    background: url('/assets/images/piggybank.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white; /* Set text color to white for better contrast */
 }
 
-.container-fluid {
-    padding: 0;
-    margin: 0;
-    max-width: 1200px;
+#page-content-wrapper {
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5); /* Add a dark overlay for better text readability */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 30px;
-    border: none;
+.content-wrapper {
     width: 100%;
-    transition: box-shadow 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    max-width: 600px; /* Set a max-width for better layout */
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Add a dark overlay for better text readability */
+    border-radius: 8px;
 }
 
 .card-body {
-    padding: 0;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
 }

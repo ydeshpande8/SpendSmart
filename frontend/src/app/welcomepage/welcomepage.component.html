@@ -3,33 +3,37 @@
         <div class="row justify-content-center my-5">
             <div class="col-md-12">
                 <div class="card" width="100%">
-                    <div *ngIf="isLoggedIn; then defaultContent else authContent"></div>
-                        <ng-template #defaultContent>
-                            <div class="card-body" >
-                                <h3 class="text-primary"> Hello User! Welcome to SmartSpend here you can track your expenses and income with a proper visualization and reports </h3>
-                                <div class="row justify-content-center my-3">
-                                    <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary mx-2" (click)="onBudgetButtonClick()">I want to add budget</button>
-                                        <button type="button" class="btn btn-primary mx-2" (click)="onTransactionButtonClick()">I want to view history of budget</button>
-                                        <button type="button" class="btn btn-primary mx-2" (click)="onReportButtonClick()">I want to view reports of my transactions</button>
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="flex-shrink-0">
+                            <img src="/assets/images/piggybank.png" class="img-fluid" style="max-width: 400px;">
+                        </div>
+                        <div class="flex-grow-1 ms-5">
+                            <div *ngIf="isLoggedIn; then defaultContent else authContent"></div>
+                            <ng-template #defaultContent>
+                                <div class="card-body">
+                                    <h3 class="text-primary">Welcome to SpendSmart</h3>
+                                    <div class="row justify-content-center my-3">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary mx-2" (click)="onBudgetButtonClick()">Add budget</button>
+                                            <button type="button" class="btn btn-primary mx-2" (click)="onTransactionButtonClick()">View Transactions</button>
+                                            <button type="button" class="btn btn-primary mx-2" (click)="onReportButtonClick()">View Reports</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </ng-template>
-                        <ng-template #authContent>
-                            <div class="card-body">
-                                <h3 class="text-primary"> Hello Budget Manager! </h3>
-                                <h3 class="text-primary"> Welcome to SmartSpend please login to continue </h3>
-                                <div class="row justify-content-center my-3">
-                                    <div class="col-md-12">
-                                        <button type="button" class="btn btn-primary mx-2">Login</button>
+                            </ng-template>
+                            <ng-template #authContent>
+                                <div class="card-body text-center">
+                                    <h1 class="display-4 text-primary">Spend Smart</h1>
+                                    <h5 class="font-weight-light">Budget Better Live Smarter</h5>
+                                    <div class="my-4">
+                                        <button type="button" class="btn btn-primary btn-lg">Login</button>
                                     </div>
                                 </div>
-                            </div>
-                        </ng-template>
+                            </ng-template>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
+    </div>
 </div>
