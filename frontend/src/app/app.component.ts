@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  isLoggedIn= true;
-  isNotLoggedIn = false;
+  isLoggedIn= true;   //check for session, if session has 'user' then true else false
+  // condition ? true : false 
 
   
 }
