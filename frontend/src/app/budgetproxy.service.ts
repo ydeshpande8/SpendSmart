@@ -32,4 +32,8 @@ export class BudgetproxyService {
   getAllCategories(){
     return this.httpClient.get(this.hostUrl + '/app/category/')
   }
+  
+  getcurrentUser(){
+    return this.httpClient.get(this.hostUrl + '/app/currentuser')
+  }
 }

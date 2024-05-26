@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BudgetproxyService } from './budgetproxy.service';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  isLoggedIn= true;   //check for session, if session has 'user' then true else false
-  // condition ? true : false 
-
-  
-}
+  user : any;
+  constructor(private proxy$: BudgetproxyService)
+{
+  proxy$.getcurrentUser().subscribe((user : any) => {
+    this.user = user;
+  })
+}}
