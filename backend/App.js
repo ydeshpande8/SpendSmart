@@ -113,8 +113,10 @@ class App {
             console.log(req.body);
             var jsonObj = req.body;
             try {
-                yield this.Budget.model.create([jsonObj]);
-                res.json({ message: "Budget for type Expense created successfully" });
+                const createdBudget = yield this.Budget.model.create([jsonObj]);
+                //res.json({ message: "Budget for type Expense created successfully" });
+                const createdId = createdBudget[0].budgetId;
+                res.send({ id: createdId });
             }
             catch (e) {
                 console.error(e);

@@ -139,8 +139,10 @@ class App {
        
         try
         {
-          await this.Budget.model.create([jsonObj]);
-          res.json({ message: "Budget for type Expense created successfully" });
+          const createdBudget = await this.Budget.model.create([jsonObj]);
+          //res.json({ message: "Budget for type Expense created successfully" });
+          const createdId = createdBudget[0].budgetId;
+          res.send({ id: createdId });
         }
         catch(e)
         {
