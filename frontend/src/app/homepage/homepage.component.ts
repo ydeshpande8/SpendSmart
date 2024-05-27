@@ -11,17 +11,23 @@ import { Router } from '@angular/router';
 })
 export class HomepageComponent {
   categories :any;
+  user:any;
+  
   formSubmitted= false;
   constructor(private proxy$:BudgetproxyService, private router: Router){
     proxy$.getAllCategories().subscribe((result: any) => {this.categories = result;
       console.log(result);
     })
+    proxy$.getcurrentUser().subscribe((user : any) => {
+      this.user = user._id;
+    })
+    
   }
   createForm = new FormGroup({
     categoryId : new FormControl('',[
       Validators.required
     ]),
-    userId: new FormControl('664531c188d1ad588b6f3808'),
+    // userId: new FormControl(this.user),
     amount : new FormControl('',[
       Validators.required,
       Validators.pattern("^[0-9]*$")
@@ -39,7 +45,16 @@ export class HomepageComponent {
   onSubmit(){
     this.formSubmitted = true;
     if(this.createForm.valid){
-      this.proxy$.createBudget(this.createForm.value).subscribe((result : any) => {
+      const body = {
+        categoryId : this.createForm.value.categoryId,
+        date : this.createForm.value.date,
+        note : this.createForm.value.note,
+        amount : this.createForm.value.amount, 
+        type : this.createForm.value.type,
+        userId : this.user
+
+      }
+      this.proxy$.createBudget(body).subscribe((result : any) => {
         console.log(result)
         if(result){
           this.router.navigate(['/transactions']);
