@@ -7,7 +7,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class BudgetproxyService {
 
-  hostUrl: string = "http://localhost:8080";
+  hostUrl: string = "";
 
   constructor(private httpClient: HttpClient) { }
 
