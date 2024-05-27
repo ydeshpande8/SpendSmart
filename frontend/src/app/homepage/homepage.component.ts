@@ -57,7 +57,7 @@ export class HomepageComponent {
       this.proxy$.createBudget(body).subscribe((result : any) => {
         console.log(result)
         if(result){
-          this.router.navigate(['/transactions',result._id]);
+          this.router.navigate(['/transaction',result[0].budgetId]);
         }
       })
     
