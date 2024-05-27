@@ -37,7 +37,4 @@ export class BudgetproxyService {
     return this.httpClient.get(this.hostUrl + '/app/category/')
   }
   
-  getcurrentUser(){
-    return this.httpClient.get(this.hostUrl + '/app/currentuser')
-  }
 }
