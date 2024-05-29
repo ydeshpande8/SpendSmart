@@ -3,8 +3,8 @@
         <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
             <div class="user-image-upload">
                 <label for="imageUpload" class="image-label">
-                    <img id="userImage" [src]='user.photo' alt="" class="img-thumbnail">
-                    <span class="username-overlay">{{user.displayName}}</span>
+                    <img id="userImage" [src]='user?.photo' alt="" class="img-thumbnail">
+                    <span class="username-overlay">{{user?.displayName}}</span>
                 </label>
             </div>
         </div>
@@ -17,5 +17,31 @@
             <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i class="fas fa-power-off me-2 mx-3"></i>Logout</a>
         </div>
     </div>
-    <router-outlet />
+    <div id="d-flex page-content-wrapper" *ngIf="isNotLoggedIn">
+        <div class="container-fluid px-4">
+            <div class="row justify-content-center my-5">
+                <div class="col-md-12">
+                    <div class="card" width="100%">
+                        <div class="d-flex flex-row align-items-center">
+                            <div class="flex-shrink-0">
+                                <img src="/assets/images/piggybank.png" class="img-fluid" style="max-width: 400px;">
+                            </div>
+                            <div class="flex-grow-1 ms-5">
+                                <div class="card-body text-center">
+                                    <h1 class="display-4 text-primary">Spend Smart</h1>
+                                    <h5 class="font-weight-light">Budget Better Live Smarter</h5>
+                                    <div class="my-4">
+                                        <button type="button" class="btn btn-primary btn-lg" (click)="onLoginButtonClick()">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div *ngIf="user.displayName">
+        <router-outlet />
+    </div>  
 </div>

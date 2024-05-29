@@ -8,8 +8,6 @@ import { Router } from '@angular/router';
   styleUrl: './welcomepage.component.css'
 })
 export class WelcomepageComponent {
-  isLoggedIn= true;   //check for session, if session has 'user' then true else false
-  // condition ? true : false 
   constructor(private router: Router){
 
   }
@@ -21,11 +19,5 @@ export class WelcomepageComponent {
   }
   onReportButtonClick(){
     this.router.navigate(['/report']);
-  }
-
-  onLoginButtonClick(){
-    //Run api for user login
-    // Store user info in  a session
-    // navigate to / page
   }
 }

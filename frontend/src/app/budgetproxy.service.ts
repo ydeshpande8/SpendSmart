@@ -11,6 +11,9 @@ export class BudgetproxyService {
 
   constructor(private httpClient: HttpClient) { }
 
+  login(){
+    return this.httpClient.get(this.hostUrl + '/auth/google')
+  }
 
   getcurrentUser(){
     return this.httpClient.get(this.hostUrl + '/app/currentuser')
