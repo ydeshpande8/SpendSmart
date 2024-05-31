@@ -23,8 +23,9 @@ export class AppComponent {
 
   }
   onLoginButtonClick(){
-    this.proxy$.login().subscribe((user : any) => {
-      this.router.navigate(['/']);
-    })
+    // this.proxy$.login().subscribe((user : any) => {
+    //   this.router.navigate(['/']);
+    {window.location.href='/auth/google'}
+    }
   }
-}
+
