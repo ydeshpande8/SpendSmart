@@ -1,3 +1,10 @@
+## SpendSmart
+
+SpendSmart is a digital application designed to transform the way students ​manage their expenses. By offering insights into spending patterns, personalized ​budget recommendations, and predictive analytics, SpendSmart aims to provide a ​comprehensive tool for students to manage their finances effectively. It offers a ​unique combination of budget management with smart shopping ​recommendations, ensuring students can navigate their academic and financial ​challenges with greater ease.
+
+
+
+
 Create db folder in WebWizards Directory mkdir db
 
 Run the mongod command to run the mongo server on port 3000 mongod --port 3000 --dbpath ./db
