@@ -6,7 +6,7 @@ SpendSmart is a digital application designed to transform the way students ​ma
 
 
 ## Live Site Link :
-https://webbwizards.azurewebsites.net/#/report
+https://webbwizards.azurewebsites.net/#/
 
 Create db folder in WebWizards Directory mkdir db
 
