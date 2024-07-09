@@ -5,6 +5,9 @@ SpendSmart is a digital application designed to transform the way students ​ma
 
 
 
+## Live Site Link :
+https://webbwizards.azurewebsites.net/#/report
+
 Create db folder in WebWizards Directory mkdir db
 
 Run the mongod command to run the mongo server on port 3000 mongod --port 3000 --dbpath ./db
